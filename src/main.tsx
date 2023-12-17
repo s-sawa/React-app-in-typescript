@@ -1,10 +1,18 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.tsx";
+import "./index.css";
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+// <App />コンポーネントのエントリーポイントの設定
+// id がrootの要素にレンダリングする
+// ('root')! の! は、idがrootの要素が必ず存在する(null undefinedではない)ことをTypeScriptに伝えるためのもの
+
+// type Foo = JSX.IntrinsicAttributes;
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+    <App message="Hello React!!!" />
+  </React.StrictMode>
+);
+
+
