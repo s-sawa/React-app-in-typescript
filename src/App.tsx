@@ -1,8 +1,9 @@
+import React from "react";
 import "./App.css";
 
 // 一般的にReactではpropsの方注釈にインターフェイスを用いる
 interface AppProps {
-  message: string;
+  message?: string;
 }
 
 // 文字列型propsを受け取る制約の書き方
@@ -10,11 +11,14 @@ interface AppProps {
 // const App = ({ message }: { message: string }) => {
 
 // interfaceを用いた型注釈
-const App = ({ message }: AppProps) => {
-  // const App = (props: any) => {
-  // const { message } = props;
-  // const message = props.message;
+// <>で型引数を受け取る
+const App: React.FunctionComponent<AppProps> = ({ message }) => {
   return <div>{message}</div>;
+};
+
+App.defaultProps = {
+  message: "Hello, defaultProps!",
+  // description: "this is app component",
 };
 
 export default App;
