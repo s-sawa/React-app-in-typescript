@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import Counter from "./Counter";
 
 // 一般的にReactではpropsの方注釈にインターフェイスを用いる
 interface AppProps {
@@ -13,7 +14,11 @@ interface AppProps {
 // interfaceを用いた型注釈
 // <>で型引数を受け取る
 const App: React.FunctionComponent<AppProps> = ({ message }) => {
-  return <div>{message}</div>;
+  return (
+    <div>
+      <Counter />
+    </div>
+  );
 };
 
 App.defaultProps = {
