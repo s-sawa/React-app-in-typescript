@@ -16,6 +16,15 @@ const Counter: React.FC<Record<string, never>> = () => {
   useEffect(() => {
     renderTimes.current = renderTimes.current + 1;
   });
+  const ref = useRef<HTMLInputElement>(null!); // !をつけることでnull型じゃないよ！とTSに伝えられる 
+  const focusInput = () => {
+    // const current = ref.current;
+    // if (current != null) {
+    //   current.focus();
+    // }
+    // ref.current?.focus(); // オプショナルチェイニング nullの時は以降のメソッドを実行しないよ
+    ref.current.focus();
+  };
 
   return (
     <div>
@@ -23,6 +32,8 @@ const Counter: React.FC<Record<string, never>> = () => {
       <button onClick={increment}>+1</button>
       <button onClick={decrement}>-1</button>
       <div>This component was re-rendered {renderTimes.current} times!</div>
+      <input ref={ref} type="text" />
+      <button onClick={focusInput}>Click me</button>
     </div>
   );
 };
