@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import Counter from "./Counter";
+import CounterWithReducer from "./CounterWithReducer";
 
 // 一般的にReactではpropsの方注釈にインターフェイスを用いる
 interface AppProps {
@@ -16,7 +17,8 @@ interface AppProps {
 const App: React.FunctionComponent<AppProps> = ({ message }) => {
   return (
     <div>
-      <Counter />
+      {/* <Counter /> */}
+      <CounterWithReducer />
     </div>
   );
 };
